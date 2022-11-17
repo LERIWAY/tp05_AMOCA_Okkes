@@ -1,0 +1,32 @@
+[
+  {
+      "name": "Souris",
+      "description":"Logitech Bluetooth",
+      "price": 30
+  },
+  {
+      "name": "Clavier",
+      "description":"Razer 500",
+      "price": 60
+  },
+  {
+      "name": "Fleur",
+      "description":"Rose",
+      "price": 15
+  },
+  {
+      "name": "Tupperware",
+      "description":"Repas à transporter",
+      "price": 20
+  },
+  {
+      "name": "Téléphone",
+      "description":"Nokia 600",
+      "price": 100
+  },
+  {
+      "name": "Voiture",
+      "description":"Peugeot 308",
+      "price": 5000
+  }
+]

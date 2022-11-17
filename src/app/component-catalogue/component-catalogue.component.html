@@ -1,0 +1,18 @@
+<div>
+    <h1>Catalogue</h1>
+    <app-component-recherche [property]="'name'" [list]="products" (filterResult)="updateList($event)"
+        (filterReset)="getCatalogueProducts()">
+    </app-component-recherche>
+
+    <div *ngIf="products" class="flex">
+        <div *ngFor="let product of products">
+            <br>
+            <b>{{product.name}}</b>
+            <p>{{ product.description }} <br>
+                {{product.price | currency:'EUR'}}
+            </p>
+            <button (click)="addToMagasinList(product)">Ajouter</button>
+            <button (click)="delToMagasinList(product)">Supprimer</button>
+        </div>
+    </div>
+</div>

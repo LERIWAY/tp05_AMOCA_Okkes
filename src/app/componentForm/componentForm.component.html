@@ -1,0 +1,56 @@
+<div class="c1" [formGroup]="clientForm" style="padding-left:20px">
+    <br />
+    <b><label style="font-size: 20px; text-decoration: double;" >{{title}} </label></b>
+    <br /><br />
+
+    <label>Prenom : </label>
+    <input appValiditeString [disabled]="!valid" [(ngModel)]="prenom" />
+    <label> Nom : </label>
+    <input appValiditeString [disabled]="!valid" [(ngModel)]="nom" />
+
+    <br /><br />
+    <div>
+        <label>Genre : </label>
+        <input [disabled]="!valid" [(ngModel)]="genre" type="radio" name="gender" value="Monsieur"> <label> Male</label>
+        <input [disabled]="!valid" [(ngModel)]="genre" type="radio" name="gender" value="Madame"> <label> Female</label>
+    </div>
+    <br/>
+
+    <label>Email : </label>
+    <input [disabled]="!valid" [(ngModel)]="email" placeholder="exemple@mail.com" />
+    <label>Tel : </label>
+    <input appValiditeNumber [disabled]="!valid" [(ngModel)]="tel" />
+    <label> Format : {{ tel | telFormat }}</label>
+
+    <br/><br/>
+    <label>Adresse : </label>
+    <input [disabled]="!valid" [(ngModel)]="adresse" />
+
+    <label> Ville : </label>
+    <input appValiditeString [disabled]="!valid" [(ngModel)]="ville" />
+
+    <label> Code postal : </label>
+    <input appValiditeNumber [disabled]="!valid" [(ngModel)]="cp" />
+
+    <label> Pays : </label>
+    <input appValiditeString [disabled]="!valid" [(ngModel)]="pays" />
+    <br /><br />
+
+    <b><label> Login : </label></b>
+    <input [disabled]="!valid" type="login" [(ngModel)]="login" />
+    <br /><br />
+    <b><label> Mot de passe : </label></b>
+    <input [disabled]="!valid" type="password" [(ngModel)]="password" />
+    <b><label>  Confirmer votre mot de passe : </label></b>
+    <input [disabled]="!valid" type="password" [(ngModel)]="confirmPassword"/>
+    <br/><br/>
+    <label class="mdpError" *ngIf="!cacherErreur">Le login/mot de passe n'est pas rensigné ou le mot de passe n'est pas identique !</label>
+</div>
+
+<br />
+<div style="text-align: center;">
+    <button class="envoyer" [disabled]="!valid" (click)="clicChange()">Envoyer le formulaire</button>
+</div>
+
+<app-componentAffichage *ngIf="!cacher" [client]="client">
+</app-componentAffichage>

@@ -1,0 +1,16 @@
+div.c1 {
+    border-bottom: 1px solid blue
+}
+
+label.mdpError {
+    font-size: large;
+    color: red;
+}
+
+button.envoyer {
+    background-color: #1798a1;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    cursor: pointer;
+}

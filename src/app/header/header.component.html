@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="header">
+  <a class="logo">TP04 - Application ANGULAR</a>
+  <div class="header-right">
+    <a [routerLink]="['/']">Home</a>
+    <a [routerLink]="['/contact']">Contact</a>
+    <a [routerLink]="['/catalogue']">Catalogue</a>
+  </div>
+</div>
+<p>Nombre de produit : {{numberProduct$ | async}}</p>
+
+</body>
+</html>
