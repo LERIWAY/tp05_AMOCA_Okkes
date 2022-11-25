@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   catalogue: '/assets/catalogue.json',
-  
+  apiurl: 'https://deploy-b6a9.onrender.com/api/',
 };
 
 /*

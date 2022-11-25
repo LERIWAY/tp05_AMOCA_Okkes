@@ -1,0 +1,10 @@
+<!-- login component -->
+
+<h1>Login (JWT -> terminal)</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input matInput placeholder="login" formControlName="login" />
+    <input matInput placeholder="Password" formControlName="password" type="password" />
+    <button raised-button color="primary" type="submit">
+        Login
+    </button>
+</form>

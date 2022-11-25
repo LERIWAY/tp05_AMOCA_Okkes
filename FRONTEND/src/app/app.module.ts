@@ -12,7 +12,7 @@ import { ValiditeStringDirective } from './directives/ValiditeString/validite-st
 import { TelFormatPipe } from './pipe/tel-format.pipe';
 import { MonserviceService } from './services/monservice.service';
 import { ComponentCatalogueComponent } from './component-catalogue/component-catalogue.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ComponentRechercheComponent } from './component-recherche/component-recherche.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -21,7 +21,9 @@ import { ContactModule } from './modules/contact/contact.module';
 import { NgxsModule } from '@ngxs/store';
 import { MagasinState } from './magasin/magasin-state';
 import { PanierComponent } from './panier/panier.component';
-
+import { ApiHttpInterceptor } from './services/apihttpinterceptor';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { PanierComponent } from './panier/panier.component';
     ValiditeNumberDirective,
     ValiditeStringDirective,
     PanierComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,11 @@ import { PanierComponent } from './panier/panier.component';
     ContactModule,
     NgxsModule.forRoot([MagasinState])
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApiHttpInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
